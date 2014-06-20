@@ -6,4 +6,4 @@
 sudo npm install -g todayjs
 ```
 
-![](https://github.com/skippednote/todayjs/blob/master/todayjs.gif)
+![](https://raw.githubusercontent.com/skippednote/todayjs/master/todayjs.gif)
