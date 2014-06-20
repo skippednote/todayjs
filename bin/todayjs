@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+'use strict';
+var fs = require('fs');
+var os = require('os');
+var stringer = '';
+
+if(process.argv.length < 3) {
+    console.log("Add atleat two Arguments for Task and Sub Task");
+} else {
+    for(var i = 3; i< process.argv.length; i++) {
+        if (i < process.argv.length - 1) {
+            stringer += process.argv[i] + ' then ';
+        } else {
+            stringer += process.argv[i];
+        }
+    }
+
+    if (os.type() === "Darwin") {
+        var file = process.env['HOME'] + '/Desktop/today.txt';
+    } else if (os.type() === "Linux") {
+        var file = process.env['HOME'] + '/desktop/today.txt';
+    }
+
+    fs.writeFile(file, 'If nothing else, today I am going to ' + process.argv[2] + '.\n' + 'I\'ll do this by ' + stringer + '.\nIf I do this and only this, today will be a good day.', function(err) {
+        if (err) {
+            throw err;
+        } else {
+            console.log('File created');
+        }
+    });
+}

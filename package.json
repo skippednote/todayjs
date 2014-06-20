@@ -1,0 +1,30 @@
+{
+  "name": "todayjs",
+  "version": "0.1.1",
+  "main": "bin/todayjs",
+  "description": "Priorities tasks by creating today.txt on Desktop.",
+  "homepage": "https://github.com/skippednote/todayjs",
+  "bugs": "https://github.com/skippednote/todayjs/issues",
+  "author": {
+    "name": "Bassam Ismail",
+    "email": "skippednote@gmail.com",
+    "url": "bassam.co"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skippednote/todayjs"
+  },
+  "license": "MIT",
+  "keywords": [
+      "todayjs",
+      "productivity"
+  ],
+  "main": "bin/todayjs",
+  "bin": {
+    "todayjs": "bin/todayjs"
+  },
+  "preferGlobal": true,
+  "engines": {
+    "node": ">= 0.8.0"
+  }
+}
