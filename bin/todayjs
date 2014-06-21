@@ -17,21 +17,25 @@ if (os.type() === "Darwin") {
 if (process.argv.length < 3) {
     console.log(chalk.blue("Add atleat two Arguments for Task and Sub Task."));
 } else {
-
     for(var i = 3; i< process.argv.length; i++) {
+
         if (i < process.argv.length - 1) {
             subtasks += process.argv[i] + ' then ';
         } else {
             subtasks += process.argv[i];
         }
+
     }
 
     if (fs.existsSync(file)) {
+
         var created = fs.statSync(file).atime.toString().split(' ').slice(0, 4).join('-').toLowerCase() + '.txt';
+
         if (!fs.existsSync(todayjsDir)) {
             fs.mkdirSync(homeDir + '/.todayjs', [755]);
             console.log(chalk.blue('Created a new directory to store past today.txt files.'));
         }
+
         if (fs.existsSync(todayjsDir + created)) {
             fs.unlink(todayjsDir + created, function() {
                 console.log(chalk.red.bold('Deleted the file by same name!'));
@@ -45,13 +49,17 @@ if (process.argv.length < 3) {
                 console.log(chalk.blue('Took a backup on existing files on Desktop.\nYou can check existing files in: ' + todayjsDir));
             }
         });
+
     }
 
     fs.writeFile(file, 'If nothing else, today I am going to ' + process.argv[2] + '.\n' + 'I\'ll do this by ' + subtasks + '.\nIf I do this and only this, today will be a good day.', function(err) {
+
         if (err) {
             throw err;
         } else {
             console.log(chalk.green.bold('today.txt created. Have a Productive day ahead.'));
         }
+
     });
+
 }
