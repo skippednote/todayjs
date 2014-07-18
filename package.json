@@ -1,6 +1,6 @@
 {
   "name": "todayjs",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "bin/todayjs",
   "description": "Priorities tasks by creating today.txt on Desktop.",
   "homepage": "https://github.com/skippednote/todayjs",
